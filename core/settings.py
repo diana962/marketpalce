@@ -38,7 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop'
+    # my apps
+    'shop',
+    'account',
+
+    # installed apps
+    'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +141,20 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # Используйте TokenAuthentication
+        # 'rest_framework.authentication.SessionAuthentication',  # Убедитесь, что SessionAuthentication отключена, если не используется
+    ]
+}
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
