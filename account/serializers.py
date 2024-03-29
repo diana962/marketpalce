@@ -14,6 +14,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
+        # fields = '__all__'
         exclude = ('groups', 'user_permissions', 'is_superuser', 'is_staff', 'is_active')
 
     def validate(self, attrs):
