@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
+<<<<<<< HEAD
     <option name="sdkName" value="Python 3.10 (marketpalce)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (marketpalce)" project-jdk-type="Python SDK" />
+=======
+    <option name="sdkName" value="Python 3.11 (marketplace)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (marketplace)" project-jdk-type="Python SDK" />
+>>>>>>> 8918932dac58d61db744d85d66f2ec0943e6d34b
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>
