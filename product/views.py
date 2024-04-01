@@ -14,11 +14,13 @@ class StandardResultsSetPagination(PageNumberPagination):
     page_query_param = 'page'
     page_size_query_param = 'page_size'
     max_page_size = 1000
+
+
 class ClothesViewSet(ModelViewSet):
     queryset = Clothes.objects.all()
     filter_backends = (DjangoFilterBackend, SearchFilter)
     search_fields = ('title', 'body')
-    filterset_fields = ('owner', 'category')
+    filter_set_fields = ('owner', 'category')
     pagination_class = StandardResultsSetPagination
 
     def perform_create(self, serializer):

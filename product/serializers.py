@@ -4,10 +4,12 @@ from catalog.models import Catalog
 # from comment.serializers import CommentSerializer
 from product.models import ClothesImage
 
+
 class ClothesImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClothesImage
         fields = '__all__'
+
 
 class ClothesListSerializer(serializers.ModelSerializer):
     owner_username = serializers.ReadOnlyField(source='owner.username')
@@ -29,14 +31,15 @@ class ClothesListSerializer(serializers.ModelSerializer):
         return repr
 
 
-
 class ClothesCreateSerializer(serializers.ModelSerializer):
     category = serializers.PrimaryKeyRelatedField(required=True, queryset=Catalog.objects.all())
     owner = serializers.ReadOnlyField(source='owner.id')
     images = ClothesImageSerializer(many=True, required=False)
+
     class Meta:
         model = Clothes
         fields = ('id', 'title', 'owner', 'category', 'preview', 'images')
+
     def create(self, validated_data):
         request = self.context.get('request')
         # print(request.FILES, '!!!')
@@ -45,7 +48,6 @@ class ClothesCreateSerializer(serializers.ModelSerializer):
         image_objects = [ClothesImage(image=image, post=product) for image in images]
         ClothesImage.objects.bulk_create(image_objects)
         return product
-
 
 
 class ClothesDetailSerializers(serializers.ModelSerializer):

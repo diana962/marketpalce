@@ -1,6 +1,7 @@
 from django.db import models
 from catalog.models import Catalog
 
+
 class Clothes(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=1500, blank=True)
@@ -14,9 +15,10 @@ class Clothes(models.Model):
         return f'{self.seller} - {self.title[:50]}'
 
     class Meta:
-        ordering = ('created_at', )
+        ordering = ('created_at',)
         verbose_name = 'Clothes'
         verbose_name_plural = 'Clothes'
+
 
 class ClothesImage(models.Model):
     image = models.ImageField(upload_to='images/')

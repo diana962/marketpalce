@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from catalog.models import Catalog
 
+
 class CatalogListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Catalog
@@ -9,3 +10,7 @@ class CatalogListSerializer(serializers.ModelSerializer):
 
 class CatalogSerializer(serializers.ModelSerializer):
     children = CatalogListSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Catalog
+        fields = ('id', 'name', 'children')

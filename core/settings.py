@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'like',
     'order',
     'product',
+    'comment',
 
     # installed apps
     'rest_framework',
