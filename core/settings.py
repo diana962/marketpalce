@@ -18,12 +18,18 @@ INSTALLED_APPS = [
     # my apps
     'shop',
     'account',
+    'catalog',
+    'like',
+    'order',
+    'product',
 
     # installed apps
     'rest_framework',
+    # 'rest_framework.auth',
     'rest_framework.authtoken',
     'dj_rest_auth',
     'drf_yasg',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
