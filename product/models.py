@@ -4,6 +4,7 @@ from catalog.models import Catalog
 class Clothes(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=1500, blank=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     seller = models.ForeignKey('auth.USER', related_name='clothes', on_delete=models.CASCADE)
     catalog = models.ForeignKey(Catalog, related_name='clothes', on_delete=models.SET_NULL, null=True)
     preview = models.ImageField(upload_to='images/', null=True, blank=True)
