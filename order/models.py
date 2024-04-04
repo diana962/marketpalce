@@ -1,6 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.db import models
-from django.contrib.auth.models import User
 from product.models import Clothes
+
+User = get_user_model()
 
 class Order(models.Model):
     ORDERED = 1

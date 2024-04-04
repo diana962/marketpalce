@@ -1,9 +1,8 @@
 from django.db import models
-from rest_framework.authtoken.admin import User
 from product.models import Clothes
 
-# from django.contrib.auth import get_user_model
-# User = get_user_model()
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 class Rating(models.Model):
     RATING_CHOICES = (

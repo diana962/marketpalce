@@ -1,12 +1,18 @@
 from django.urls import path, include
-# from dj_rest_auth import LoginView, LogoutView
-from . import views
-from dj_rest_auth.views import LoginView, LogoutView
+from rest_framework.routers import DefaultRouter
+
+from account.views import UserViewSet
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+router = DefaultRouter()
+router.register('', UserViewSet)
+
 
 urlpatterns = [
-    path('register/', views.UserRegisterView.as_view()),
-    path('login/', LoginView.as_view()),
-    path('logout/', LogoutView.as_view()),
-    path('', views.UserListView.as_view()),
-    path('<int:pk>/', views.UserDetailView.as_view())
+    path('', include(router.urls)),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

@@ -15,3 +15,18 @@ class LikeSerializer(serializers.ModelSerializer):
         if user.likes.filter(post=product).exists():
             raise serializers.ValidationError('You already liked it once!')
         return attrs
+
+
+# class FavoriteSerializer(serializers.ModelSerializer):
+#     post_title = serializers.ReadOnlyField(source='post.title')
+#     # post_preview = serializers.ReadOnlyField(source='post.preview.url')
+#     class Meta:
+#         model = Favorite
+#         fields = ('id', 'post', 'post_title')
+#
+#     def to_representation(self, instance):
+#         repr = super(FavoriteSerializer, self).to_representation(instance)
+#         preview = instance.post.preview
+#         repr['post_preview'] = preview.url if preview else None
+#         return repr
+
