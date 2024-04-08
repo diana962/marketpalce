@@ -21,7 +21,7 @@ class CustomUser(AbstractUser):
     )
 
     activation_code = models.CharField(max_length=50, unique=True, blank=True)
-    objects = UserManager()
+    # objects = UserManager() #no need
 
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "email"

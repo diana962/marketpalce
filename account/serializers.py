@@ -18,7 +18,6 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         fields = ('username', 'email', 'password', 'password2')
 
     def validate(self, attrs):
-        print(attrs, type(attrs))
         password2 = attrs.pop('password2')
         if attrs['password'] != password2:
             raise serializers.ValidationError('Пароли не совпадают!')

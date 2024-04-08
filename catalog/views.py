@@ -11,13 +11,3 @@ class CatalogCreateListView(generics.ListCreateAPIView):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), ]
         return [permissions.IsAdminUser(), ]
-
-
-class CatalogDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Catalog.objects.all()
-    serializer_class = serializers.CatalogSerializer
-
-    def get_permissions(self):
-        if self.request.method == 'GET':
-            return [permissions.IsAuthenticated(), ]
-        return [permissions.IsAdminUser(), ]
