@@ -2,7 +2,10 @@ from django.contrib.auth import get_user_model
 from product.models import Clothes
 from django.db import models
 
+
 User = get_user_model()
+
+
 class Comment(models.Model):
     owner = models.ForeignKey(User, related_name='comments',
                               on_delete=models.CASCADE)

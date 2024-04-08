@@ -2,6 +2,7 @@ from catalog.models import Catalog
 from catalog import serializers
 from rest_framework import generics, permissions
 
+
 class CatalogCreateListView(generics.ListCreateAPIView):
     queryset = Catalog.objects.all()
     serializer_class = serializers.CatalogListSerializer
@@ -11,6 +12,7 @@ class CatalogCreateListView(generics.ListCreateAPIView):
             return [permissions.IsAuthenticated(), ]
         return [permissions.IsAdminUser(), ]
 
+
 class CatalogDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Catalog.objects.all()
     serializer_class = serializers.CatalogSerializer
@@ -19,5 +21,3 @@ class CatalogDetailView(generics.RetrieveUpdateDestroyAPIView):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), ]
         return [permissions.IsAdminUser(), ]
-
-

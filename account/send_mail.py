@@ -1,12 +1,19 @@
 from decouple import config
 from django.core.mail import send_mail
 
+HOST = config('HOST')
+
 
 def send_mail_register(user, code):
+    link = f'{HOST}/accounts/activate/{code}/'
     send_mail(
-        'Здраствуйте, пожалуйста активируйте ваш аккаунт',
-        f'Вот ваш токен{code}\nВведите его по ссылке\n\thttp://localhost:8000/api/v1/accounts/activate/',
-        config('EMAIL_USER'),
+        'Hello, please activate your account',
+
+        f'To activate your account enter a link bellow: \n\n{link}\n'
+        
+        f'\nLink works only one time!\n',
+
+        f'dianataalaibekova2002@gmail.com',
         [user],
-        fail_silently=False
+        fail_silently=False,
     )

@@ -2,18 +2,14 @@ from pathlib import Path
 from decouple import config
 from datetime import timedelta
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET')
 
 DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(' ')
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -34,7 +30,6 @@ INSTALLED_APPS = [
     # installed apps
     'rest_framework',
     'rest_framework_simplejwt',
-    # 'rest_framework.auth',
     'rest_framework.authtoken',
     'dj_rest_auth',
     'drf_yasg',
@@ -71,8 +66,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -85,8 +78,6 @@ DATABASES = {
     }
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,8 +94,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -115,9 +104,6 @@ USE_I18N = True
 USE_TZ = True
 
 AUTH_USER_MODEL = 'account.CustomUser'
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
 STATIC_URL = 'static/'
@@ -133,19 +119,6 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
-
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework_simplejwt.authentication.JWTAuthentication',
-#         # 'rest_framework.authentication.TokenAuthentication',
-#         # Используйте TokenAuthentication
-#         # 'rest_framework.authentication.SessionAuthentication',
-#         # Убедитесь, что SessionAuthentication отключена, если не используется
-#     ]
-# }
-
 
 SWAGGER_SETTINGS = {
    'SECURITY_DEFINITIONS': {
@@ -196,7 +169,6 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
-
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
