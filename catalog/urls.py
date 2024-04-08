@@ -4,5 +4,4 @@ from catalog import views
 
 urlpatterns = [
     path('', views.CatalogCreateListView.as_view()),
-    path('<int:pk>/', views.CatalogDetailView.as_view())
 ]
