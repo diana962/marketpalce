@@ -31,7 +31,7 @@ class UserViewSet(ModelViewSet):
         send_mail_register(email, code)
 
     # http: // 127.0.0.1: 8000 / accounts / activate /
-    @action(detail=False, methods=['POST'])
+    @action(methods=['POST'], detail=False)
     def activate(self, request):
         activation_code = request.data.get('activation_code')
 
