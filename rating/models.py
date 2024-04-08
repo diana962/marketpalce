@@ -1,8 +1,9 @@
 from django.db import models
 from product.models import Clothes
-
 from django.contrib.auth import get_user_model
+
 User = get_user_model()
+
 
 class Rating(models.Model):
     RATING_CHOICES = (

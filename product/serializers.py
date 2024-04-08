@@ -14,7 +14,6 @@ class ClothesImageSerializer(serializers.ModelSerializer):
 class ClothesListSerializer(serializers.ModelSerializer):
     owner_username = serializers.ReadOnlyField(source='owner.username')
     category_name = serializers.ReadOnlyField(source='catalog.name')
-    # comments_count = serializers.ReadOnlyField(source='comments.count')
     likes_count = serializers.ReadOnlyField(source='likes.count')
 
     class Meta:
@@ -53,8 +52,6 @@ class ClothesCreateSerializer(serializers.ModelSerializer):
 class ClothesDetailSerializers(serializers.ModelSerializer):
     owner_username = serializers.ReadOnlyField(source='owner.username')
     category_name = serializers.ReadOnlyField(source='category.name')
-    # comments = CommentSerializer(many=True, read_only=True)
-    # comments_count = serializers.ReadOnlyField(source='comments.count')
     likes_count = serializers.ReadOnlyField(source='likes.count')
     images = ClothesImageSerializer(many=True, required=False)
 

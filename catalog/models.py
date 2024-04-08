@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Catalog(models.Model):
     name = models.CharField(max_length=75, unique=True)
 
