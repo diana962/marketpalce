@@ -3,11 +3,9 @@ from product import views
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register('', views.ProductViewSet)
+router.register('', views.ClothesViewSet)
 
 urlpatterns = [
-    # path('', views.PosstListCreate.as_view()),
-    # path('<int:pk>/', views.PostDetailView.as_view()),
     path('', include(router.urls)),
 ]
 
