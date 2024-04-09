@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f91f98f-034f-4684-a02c-f4915cf59726" name="Changes" comment="" />
+    <list default="true" id="3f91f98f-034f-4684-a02c-f4915cf59726" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/account/migrations/0003_alter_customuser_activation_code_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/like/migrations/0002_favorite.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/migrations/0002_remove_payment_visa_remove_payment_visa_password.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/migrations/0003_payment_visa_payment_visa_password.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping_cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/like/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/like/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rating/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rating/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,16 +61,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/diana/Desktop/PY6_/django_projects/marketplace&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.models.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/diana/Desktop/PY6_/django_projects/marketplace",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/order" />
@@ -66,16 +97,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/like/models.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
