@@ -16,13 +16,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Comment',
+            name='Order',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('body', models.TextField(max_length=300)),
+                ('quantity', models.PositiveIntegerField(default=1)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to=settings.AUTH_USER_MODEL)),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='product.clothes')),
+                ('status', models.IntegerField(choices=[(1, 'Ordered'), (2, 'Processing'), (3, 'Delivered')], default=1)),
+                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='orders', to=settings.AUTH_USER_MODEL)),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='orders', to='product.clothes')),
             ],
+            options={
+                'unique_together': {('owner', 'product')},
+            },
         ),
     ]

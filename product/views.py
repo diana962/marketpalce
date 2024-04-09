@@ -36,7 +36,7 @@ class ClothesViewSet(ModelViewSet):
         return serializers.ClothesDetailSerializers
 
     def get_permissions(self):
-        # only admin or the owner csn delete a post
+        # only admin or the owner can delete a post
         if self.action == 'destroy':
             return [IsOwnerOrAdmin(), ]
         # only owner can update a post

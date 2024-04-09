@@ -1,8 +1,12 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from product.models import Clothes
 
+User = get_user_model()
+
+
 class Like(models.Model):
-    owner = models.ForeignKey('auth.User', related_name='likes', on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, related_name='likes', on_delete=models.CASCADE)
     product = models.ForeignKey(Clothes, related_name='likes', on_delete=models.CASCADE)
 
     def __str__(self):
@@ -11,3 +15,9 @@ class Like(models.Model):
     class Meta:
         unique_together = ['owner', 'product']
 
+# class Favorite(models.Model):
+#     owner = models.ForeignKey('auth.User', related_name='favorites', on_delete=models.CASCADE)
+#     post = models.ForeignKey(Post, related_name='favorites', on_delete=models.CASCADE)
+#
+#     class Meta:
+#         unique_together = ['owner', 'post']

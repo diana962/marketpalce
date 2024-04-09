@@ -1,10 +1,8 @@
 from django.db import models
-from django.contrib.auth import get_user_model
 from product.models import Clothes
 
-
+from django.contrib.auth import get_user_model
 User = get_user_model()
-
 
 class Rating(models.Model):
     RATING_CHOICES = (
@@ -13,11 +11,9 @@ class Rating(models.Model):
         (5, 'Excellent!')
     )
 
-    product = models.ForeignKey(Clothes, related_name='ratings',
-                                on_delete=models.CASCADE)
+    product = models.ForeignKey(Clothes, related_name='ratings', on_delete=models.CASCADE)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ratings')
-    rating = models.PositiveSmallIntegerField(
-        choices=RATING_CHOICES)
+    rating = models.PositiveSmallIntegerField(choices=RATING_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

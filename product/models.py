@@ -1,5 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from catalog.models import Catalog
+
+User = get_user_model()
 
 
 class Clothes(models.Model):
@@ -7,6 +10,8 @@ class Clothes(models.Model):
     body = models.TextField(max_length=1500, blank=True)
     price = models.DecimalField(max_digits=100, decimal_places=2)
     seller = models.ForeignKey('auth.USER', related_name='clothes', on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    seller = models.ForeignKey(User, related_name='clothes', on_delete=models.CASCADE)
     catalog = models.ForeignKey(Catalog, related_name='clothes', on_delete=models.SET_NULL, null=True)
     preview = models.ImageField(upload_to='images/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
