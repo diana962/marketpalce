@@ -3,6 +3,8 @@ from django.db import models
 from product.models import Clothes
 
 User = get_user_model()
+
+
 class Like(models.Model):
     owner = models.ForeignKey(User, related_name='likes', on_delete=models.CASCADE)
     product = models.ForeignKey(Clothes, related_name='likes', on_delete=models.CASCADE)
@@ -12,6 +14,7 @@ class Like(models.Model):
 
     class Meta:
         unique_together = ['owner', 'product']
+
 
 class Favorite(models.Model):
     owner = models.ForeignKey(User, related_name='favorites', on_delete=models.CASCADE)

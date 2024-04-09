@@ -25,7 +25,7 @@ class CustomUser(AbstractUser):
 
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
 
     def save(self, *args, **kwargs):
         code = uuid.uuid4().hex

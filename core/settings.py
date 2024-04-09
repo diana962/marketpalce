@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'order',
     'product',
     'comment',
+    'payment',
+    'shopping_cart',
 
     # installed apps
     'rest_framework',
