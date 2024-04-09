@@ -8,3 +8,4 @@ drf-yasg
 django-filter
 djangorestframework-simplejwt
 django-ckeditor-5
+bs4
