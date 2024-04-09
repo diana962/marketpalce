@@ -74,3 +74,5 @@ class ClothesViewSet(ModelViewSet):
             rating = product.ratings.get(owner=user)
             rating.delete()
             return response.Response('Deleted!', status=204)
+
+

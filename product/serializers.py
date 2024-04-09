@@ -1,4 +1,6 @@
 from rest_framework import serializers
+
+from clothes_parser.currency_parssed import parser
 from product.models import Clothes
 from catalog.models import Catalog
 # from comment.serializers import CommentSerializer
@@ -14,7 +16,6 @@ class ClothesImageSerializer(serializers.ModelSerializer):
 class ClothesListSerializer(serializers.ModelSerializer):
     owner_username = serializers.ReadOnlyField(source='owner.username')
     category_name = serializers.ReadOnlyField(source='catalog.name')
-    # comments_count = serializers.ReadOnlyField(source='comments.count')
     likes_count = serializers.ReadOnlyField(source='likes.count')
 
     class Meta:
@@ -26,6 +27,7 @@ class ClothesListSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         repr = super().to_representation(instance)
         user = self.context.get('request').user
+        repr['currency'] = parser()
         if user.is_authenticated:
             repr['is_liked'] = user.likes.filter(post=instance).exists()
         return repr
@@ -53,8 +55,6 @@ class ClothesCreateSerializer(serializers.ModelSerializer):
 class ClothesDetailSerializers(serializers.ModelSerializer):
     owner_username = serializers.ReadOnlyField(source='owner.username')
     category_name = serializers.ReadOnlyField(source='category.name')
-    # comments = CommentSerializer(many=True, read_only=True)
-    # comments_count = serializers.ReadOnlyField(source='comments.count')
     likes_count = serializers.ReadOnlyField(source='likes.count')
     images = ClothesImageSerializer(many=True, required=False)
 

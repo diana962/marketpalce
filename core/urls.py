@@ -33,6 +33,7 @@ urlpatterns = [
     path('accounts/', include('account.urls')),
     path('likes/', include('like.urls')),
     path('orders/', include('order.urls')),
-    # path('products/', include('product.urls')),
     path('catalogs/', include('catalog.urls')),
+    path('comments/', include('comment.urls')),
+    path('products/', include('product.urls')),
 ] + urlpatterns1

@@ -16,6 +16,6 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         product_data = validated_data.pop('product')
-        product = Clothes.objects.get_or_create(**product_data)[0]  # Попробуйте получить товар или создать новый
+        product = Clothes.objects.get_or_create(**product_data)[0]
         order = Order.objects.create(product=product, **validated_data)
         return order
