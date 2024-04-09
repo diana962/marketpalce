@@ -4,8 +4,8 @@ from .views import OrderViewSet, order_history
 
 router = DefaultRouter()
 router.register('', OrderViewSet)
-router.register('order-history/', order_history)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('order-history/', order_history)
 ]
